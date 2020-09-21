@@ -45,8 +45,39 @@ const THREE=()=>{
 	return(string);
 };//end of THREE function
 
+const FOUR=()=>{
+	console.log("4. Insert a U in the exact middle of the row.")
+	let middleOfString=(string.length/2);
+	string.splice(middleOfString, 0, "U");
+	log();
+	return(string);
+};//end of FOUR function
 
-const numbers=[ONE(),TWO(),THREE()];
+
+
+const FIVE=()=>{
+console.log("5. Remove the sixth vowel (A, E, I, O, or U)");
+let counter=0;
+let x=0;
+let position;
+while(counter<6){
+	if (string[x]==="A"||
+	string[x]==="E"||
+	string[x]==="I"||
+	string[x]==="O"||
+	string[x]==="U"){
+	counter++;
+	position=x;
+	};//end of if
+	x++;
+};//end of while
+string.splice(position,1);
+log();
+return string;
+};//end of FIVE function
+
+
+const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE()];
 
 for (z=0; z=numbers.length-1;z++){
 	numbers[z];
