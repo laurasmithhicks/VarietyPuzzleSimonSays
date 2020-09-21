@@ -1,0 +1,53 @@
+let string="A PILLOW FOR A FISH";
+string=string.split("");
+
+const vowel=(element)=> element==="A"||"E"||"I"||"O"||"U";
+const consonant=(element)=> element!=="A"&&"E"&&"I"&&"O"&&"U";
+let alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+alphabet=alphabet.split("");
+reverseAlphabet=alphabet.reverse();
+
+
+const log=()=>{
+	stringOutput=string.join("");
+	console.log(stringOutput);
+};
+
+const ONE=()=>{
+console.log("1. Start with A PILLOW FOR A FISH.");
+	for (let i=0; i<=string.length-1; i++){
+		if(string[i]===" "){
+			let remove=string.splice(i,1);
+		};//end of if
+	};//end of for
+	log();
+	return string;
+};//end of ONE function
+
+const TWO=()=>{
+console.log("2. Change the first consonant to an N.");
+	let firstCon=string.findIndex(consonant);
+	string.splice(firstCon,1,"N");
+	log();
+	return(string);
+};//end of TWO function
+
+const THREE=()=>{
+	console.log("3. Remove the letter that comes latest in the alphabet.");
+	let lateInStr;
+	for(let j=0; j<=reverseAlphabet.length-1; j++){
+		if (string.includes(reverseAlphabet[j])===true){
+			string.splice(string.indexOf(reverseAlphabet[j]),1);
+			break;
+		}// enf of if
+	};//end of for
+	log();
+	return(string);
+};//end of THREE function
+
+
+const numbers=[ONE(),TWO(),THREE()];
+
+for (z=0; z=numbers.length-1;z++){
+	numbers[z];
+}
