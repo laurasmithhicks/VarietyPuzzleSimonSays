@@ -76,8 +76,41 @@ log();
 return string;
 };//end of FIVE function
 
+const SIX=()=>{
+	console.log("6. Swap the first I with the first O.");
+	let posOfI=string.indexOf("I");
+	let posOfO=string.indexOf("O");
+	string.splice(posOfI, 1, "O");
+	string.splice(posOfO, 1, "I");
+	log();
+	return string;
+};//end of SIX function
 
-const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE()];
+const SEVEN=()=>{
+	console.log("7. Reverse the order of the first six letters.");
+	let firstSix=string.slice(0,6);
+	let secondPart=string.splice(6,string.length-1);
+	string=firstSix.reverse().concat(secondPart);
+	log();
+	return string;
+};
+
+const EIGHT=()=>{
+	console.log("8. Remove the letter to the imediate left of the R.");
+	string.splice(string.indexOf("R")-1, 1);
+	log()
+	return string;
+};//end of EIGHT function
+
+const NINE=()=>{
+	console.log("9. Double the 5th letter.");
+	string.splice(4, 0, string[4]);
+	log();
+	return string;
+};//end of NINE function
+
+
+const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE(), SIX(), SEVEN(), EIGHT(), NINE()];
 
 for (z=0; z=numbers.length-1;z++){
 	numbers[z];
