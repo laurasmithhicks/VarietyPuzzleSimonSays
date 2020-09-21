@@ -109,8 +109,46 @@ const NINE=()=>{
 	return string;
 };//end of NINE function
 
+const TEN=()=>{
+	console.log("10. Insert a C in the exact Center of the row.");
+	let middleOfString=(string.length/2);
+	string.splice(middleOfString, 0, "C");
+	log();
+	return(string);
+};//end of TEN function
 
-const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE(), SIX(), SEVEN(), EIGHT(), NINE()];
+const ELEVEN=()=>{
+	console.log("11. Remove the seventh consonant.");
+	let y=0;
+	let counter2=0;
+	let position2;
+	while(counter2<7){
+		if (string[y]!=="A"&&
+		string[y]!=="E"&&
+		string[y]!=="I"&&
+		string[y]!=="O"&&
+		string[y]!=="U"){
+			counter2++,
+			position2=y;
+		};//end of if
+		y++;
+	};//end of while
+	string.splice(position2, 1);
+	log();
+	return string;
+};//end of ELEVEN
+
+const TWELVE=()=>{
+	console.log("12. Move the first seven letters to the very end of the row.");
+	let firstPart=string.slice(0, 7);
+	let secondPart=string.slice(7, string.length);
+	string=secondPart.concat(firstPart);
+	log();
+	return string;	
+};//end of TWELVE function
+
+
+const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE(), SIX(), SEVEN(), EIGHT(), NINE(), TEN(), ELEVEN(), TWELVE()];
 
 for (z=0; z=numbers.length-1;z++){
 	numbers[z];
