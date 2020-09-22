@@ -5,7 +5,8 @@ const vowel=(element)=> element==="A"||"E"||"I"||"O"||"U";
 const consonant=(element)=> element!=="A"&&"E"&&"I"&&"O"&&"U";
 let alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 alphabet=alphabet.split("");
-reverseAlphabet=alphabet.reverse();
+//reverseAlphabet=alphabet.reverse();
+
 
 
 const log=()=>{
@@ -34,10 +35,10 @@ console.log("2. Change the first consonant to an N.");
 
 const THREE=()=>{
 	console.log("3. Remove the letter that comes latest in the alphabet.");
-	let lateInStr;
-	for(let j=0; j<=reverseAlphabet.length-1; j++){
-		if (string.includes(reverseAlphabet[j])===true){
-			string.splice(string.indexOf(reverseAlphabet[j]),1);
+	alphabet.reverse();
+	for(let j=0; j<=alphabet.length-1; j++){
+		if (string.includes(alphabet[j])===true){
+			string.splice(string.indexOf(alphabet[j]),1);
 			break;
 		}// enf of if
 	};//end of for
@@ -147,8 +148,68 @@ const TWELVE=()=>{
 	return string;	
 };//end of TWELVE function
 
+const THIRTEEN=()=>{
+	console.log("13. Remove the double L.")
+	string.splice(string.indexOf("L"),2);
+	log();
+	return string;
+};//end of THIRTEEN function
 
-const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE(), SIX(), SEVEN(), EIGHT(), NINE(), TEN(), ELEVEN(), TWELVE()];
+const FOURTEEN=()=>{
+	console.log("14. Move the fourth and fifth letters, as a pair, to the very beginning of the row.");
+	let remove=string.slice(3,5);
+	string.splice(3,2);
+	string=remove.concat(string);
+	log();
+	return string;
+};//end of FOURTEEN function
+
+const FIFTEEN=()=>{
+	console.log("15. Remove the letter that comes earliest in the alphabet");
+	alphabet.reverse();
+	for(let j=0; j<=alphabet.length-1; j++){
+		if (string.includes(alphabet[j])===true){
+			string.splice(string.indexOf(alphabet[j]),1);
+			//console.log(j+". "+alphabet[j]);
+			break;
+		}// enf of if
+	};//end of for
+	log();
+	return(string);
+};//end of FIFTEEN function
+
+const SIXTEEN=()=>{
+	console.log("16. Move the last letter to the immediate left of the C.");
+	let last=string[string.length-1];
+	let letter=string.indexOf("C");
+	string.splice(string.indexOf("C"), 0, string[string.length-1]);
+	string.pop();
+	log();
+	return string;
+};//end of SIXTEEN function
+
+const SEVENTEEN=()=>{
+	console.log("17. Remove the fourth consonant.");
+	let z=0;
+	let counter3=0;
+	let position3;
+	while(counter3<4){
+		if (string[z]!=="A"&&
+		string[z]!=="E"&&
+		string[z]!=="I"&&
+		string[z]!=="O"&&
+		string[z]!=="U"){
+			counter3++,
+			position3=z;
+		};//end of if
+		z++;
+	};//end of while
+	string.splice(position3, 1);
+	log();
+	return string;
+}//end of SEVENTEEN function
+
+const numbers=[ONE(),TWO(),THREE(), FOUR(), FIVE(), SIX(), SEVEN(), EIGHT(), NINE(), TEN(), ELEVEN(), TWELVE(), THIRTEEN(), FOURTEEN(), FIFTEEN(), SIXTEEN(), SEVENTEEN()];
 
 for (z=0; z=numbers.length-1;z++){
 	numbers[z];
